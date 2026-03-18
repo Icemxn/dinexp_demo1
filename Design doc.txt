@@ -1,0 +1,72 @@
+Digital Restaurant Menu UI — Design Prompt
+Overview
+Design a mobile-first digital restaurant menu as a single-page web application. The aesthetic is minimalist fine dining — pure white background, black typography, subtle accents, and generous whitespace throughout.
+
+Top Navigation Bar
+
+A full-width horizontal navigation bar fixed to the top of the screen (sticky), so it remains visible at all times while the user scrolls.
+Inside the bar, render a horizontally scrollable row of category pill buttons (e.g. Starters, Mains, Pasta, Desserts, Drinks). Each pill has a clean outlined or lightly weighted style in the inactive state.
+The active/selected category pill should have a filled black background with white text to indicate the current section in view.
+As the user scrolls down the page, the active pill should automatically update to reflect whichever section is currently in the viewport (this is called "scroll spy").
+Tapping a category pill should trigger a smooth scroll animation down the page to the corresponding section.
+
+
+Page Structure
+
+Below the nav bar, the menu is divided into named sections, one per category (e.g. "Starters", "Mains", etc.).
+Each section starts with a large, bold section heading label.
+Sections are stacked vertically with generous spacing between them.
+
+
+Dish Tiles
+Each dish is displayed as a wide horizontal card (tile) with the following layout:
+Left side (text block):
+
+Dish name in bold, prominent typography
+A short one-to-two line description in lighter, smaller text (this is called "supporting copy" or "subtitle text")
+Price, clearly displayed, slightly separated from the description
+A row of small inline badge tags below the price for: Veg (green), Spicy (red chili icon), Chef's Special (gold star). Only show the tags that apply to that dish.
+
+Right side (media block):
+
+A square or slightly portrait-ratio dish photograph with subtly rounded corners
+Directly below the photo, a small ghost button (outlined, not filled) labelled "View in 3D"
+
+Tile behaviour:
+
+The tile itself is not a clickable link — it does not navigate anywhere on tap.
+However, when a tile is tapped or hovered, it should receive a subtle highlight — a very light grey background tint or a thin black border appearing around the card (this is called a "focus/hover state").
+Only two elements on the tile are interactive: the dish photograph and the "View in 3D" button, both of which trigger the 3D viewer (see below).
+
+
+3D Model Viewer
+
+Tapping either the dish photo or the "View in 3D" button opens a full-screen overlay (called a "modal" or "bottom sheet" on mobile).
+The overlay has a dark semi-transparent backdrop behind it (called a "scrim").
+Inside the modal, render an interactive 3D model viewer where the user can:
+
+Rotate the dish model by dragging (touch or mouse)
+Zoom in and out by pinching (on touch) or scrolling (on desktop)
+View fine plating and garnish details up close
+
+
+Include a clearly visible close button (✕) in the top-right corner of the modal to dismiss it.
+Use placeholder/demo 3D models for now; the viewer should be built using Three.js or a compatible 3D web library.
+
+
+Visual Style
+
+Background: pure white (#FFFFFF)
+Primary text: near-black (#111111)
+Accents and borders: black or very dark grey
+Tile hover highlight: very light grey (#F5F5F5) background or a 1px black border
+Badge colours: Veg → soft green; Spicy → soft red; Chef's Special → muted gold
+Typography: a clean sans-serif font (e.g. Inter, DM Sans, or similar). No decorative fonts.
+Spacing: use large padding and margins throughout — the layout should feel airy, never cramped.
+No shadows, gradients, or decorative elements. Flat and clean only.
+
+
+Responsiveness
+
+Design primarily for mobile screens (375px viewport width).
+On larger screens (tablet/desktop), the dish tiles can expand in width but should remain single-column for readability. Max content width of 720px, centred on the page.
